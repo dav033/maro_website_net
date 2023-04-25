@@ -1,0 +1,28 @@
+* {
+  box-sizing: content-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: #131516;
+}
+
+body {
+  height: 100vh;
+}
+
+canvas {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#___gatsby {
+  height: 100vh;
+}
+
+#gatsby-focus-wrapper {
+  height: 100%;
+}

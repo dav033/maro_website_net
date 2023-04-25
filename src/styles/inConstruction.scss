@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+.inConstruction {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+
+  .imageContent,
+  .informationContent {
+    width: 50%;
+  }
+
+  .imageContent {
+    height: 100%;
+    img {
+      object-fit: cover !important;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: none;
+    }
+  }
+
+  .informationContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .instagramIcon {
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: white;
+    }
+    h1 {
+      font-size: 4.5rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    h5 {
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: white;
+      margin-bottom: 1rem;
+    }
+
+    h1,
+    h5 {
+      font-family: "Open Sans", sans-serif;
+      font-weight: 500;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .inConstruction {
+    .informationContent {
+      h1 {
+        font-size: 3.5rem;
+      }
+
+      h5 {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 780px) {
+  .inConstruction {
+    .informationContent {
+      h1 {
+        font-size: 3rem;
+      }
+
+      h5 {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .inConstruction {
+    .imageContent {
+      display: none;
+    }
+
+    .informationContent {
+      position: relative;
+      z-index: 100;
+      width: 100%;
+      h1,
+      h5,
+      .instagramIcon {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 400;
+        color: #e4e4e4;
+      }
+
+      h1 {
+        font-size: 2.8rem;
+      }
+
+      h5 {
+        font-size: 0.9rem;
+      }
+    }
+
+    .uwu {
+      position: absolute;
+      background-image: url("../assets/images/inWorkingBack.jpg");
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .uwu::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  }
+}
