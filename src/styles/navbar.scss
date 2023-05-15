@@ -1,0 +1,122 @@
+.NavbarContainer {
+  height: 120px;
+}
+
+.navbar {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 9999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Cambia los valores para ajustar el sombreado */
+
+  .menuContainer {
+    display: none;
+    .menu {
+      display: none;
+    }
+
+    .menuButton {
+      display: none;
+    }
+  }
+  img {
+    height: 120px;
+    width: 200px;
+  }
+
+  .links {
+    padding-right: 2rem;
+    padding-left: 2rem;
+
+    a {
+      margin-right: 2rem;
+      text-decoration: none;
+      font-size: 1.1rem;
+      color: black;
+
+      &:hover {
+        color: #ff6b6b;
+      }
+    }
+  }
+}
+
+.scrolled {
+  height: 80px;
+
+  img {
+    height: 80px;
+    width: 130px;
+  }
+}
+
+@media (max-width: 650px) {
+  .NavbarContainer {
+    height: 80px;
+  }
+  .navbar {
+    height: 80px !important;
+
+    img {
+      height: 80px !important;
+      width: 130px !important;
+    }
+
+    .menuContainer {
+      display: block;
+      .menuButton {
+        display: block;
+        margin-right: 20px;
+        font-size: 20px;
+      }
+
+      .menu {
+        display: none;
+      }
+
+      .menu.show {
+        display: block;
+
+        position: absolute;
+        transform: translate(-60%, 0);
+        background-color: white;
+        list-style: none;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 120px;
+      }
+
+      .menu.show li {
+        width: 100%;
+        padding: 0;
+
+        a {
+          color: black;
+          text-decoration: none;
+          width: 100% !important;
+          display: block;
+          box-sizing: border-box;
+          padding: 5px 10px;
+        }
+      }
+
+      .menu.show li a:active {
+        background-color: #cccccc;
+      }
+
+      .menu.show li:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .links {
+      display: none;
+    }
+  }
+}
