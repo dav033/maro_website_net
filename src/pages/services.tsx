@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/services.scss";
 import Navbar from "../components/Navbar";
-import * as images from "../images";
+import images from "../images";
 import ServicePageItem from "../components/servicePageItem";
 
 export default function Services() {
@@ -75,7 +75,7 @@ export default function Services() {
         <ServicePageItem
           title="Painting"
           images={[
-            { default: images.paint.default, medium: images.paintMedium.def },
+            { default: images.paint, medium: images.paintMedium.def },
           ]}
           idSection="painting"
         >
@@ -89,10 +89,10 @@ export default function Services() {
         <ServicePageItem
           title="Lath & Plastering"
           images={[
-            { default: images.lath.default, medium: images.lathMedium.default },
+            { default: images.lath, medium: images.lathMedium },
             {
-              default: images.plastering.default,
-              medium: images.plasteringMedium.default,
+              default: images.plastering,
+              medium: images.plasteringMedium,
             },
           ]}
           idSection="lathplastering"
@@ -109,8 +109,8 @@ export default function Services() {
           title="Waterproofing"
           images={[
             {
-              default: images.waterproofing.default,
-              medium: images.waterproofingMedium.default,
+              default: images.waterproofing,
+              medium: images.waterproofingMedium,
             },
           ]}
           idSection="waterproofing"
@@ -126,12 +126,12 @@ export default function Services() {
           title="New Construction"
           images={[
             {
-              default: images.House.default,
-              medium: images.HouseMedium.default,
+              default: images.House,
+              medium: images.HouseMedium,
             },
             {
-              default: images.Building.default,
-              medium: images.BuildingMedium.default,
+              default: images.Building,
+              medium: images.BuildingMedium,
             },
           ]}
           idSection="newconstruction"
@@ -148,7 +148,7 @@ export default function Services() {
         <ServicePageItem
           title="Room Aditions"
           images={[
-            { default: images.room.default, medium: images.roomMedium.default },
+            { default: images.room, medium: images.roomMedium },
           ]}
           idSection="roomadditions"
         >
@@ -163,10 +163,10 @@ export default function Services() {
         <ServicePageItem
           title="Kitchen & Bathroom Renovations"
           images={[
-            { default: images.bath.default, medium: images.bathMedium.default },
+            { default: images.bath, medium: images.bathMedium },
             {
-              default: images.kitchen.default,
-              medium: images.kitchenMedium.default,
+              default: images.kitchen,
+              medium: images.kitchenMedium,
             },
           ]}
           idSection="kitchenbathroom"
