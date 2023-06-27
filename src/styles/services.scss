@@ -1,0 +1,210 @@
+@font-face {
+  font-family: "Gotham";
+  src: url("../assets/fonts/Gotham-Medium.woff2") format("woff2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../assets/fonts/Gotham-Black.woff2") format("woff2");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../assets/fonts/Gotham-book.woff2") format("woff2");
+  font-weight: 300;
+}
+
+.servicesPage {
+  background-color: #f1f1f1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 250px 250px;
+
+  .services-presentation {
+    width: 93%;
+    height: 600px;
+    // opacity: 0.1;
+
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("../assets/images/julian-hochgesang-vjbFXSkyRNs-unsplash.jpg");
+
+    position: relative;
+    div {
+      opacity: 0.9;
+      border-bottom-right-radius: 780%;
+      // border-top-right-radius: 15%;
+
+      width: 50%;
+      height: 270px;
+      background-color: #f1f1f1;
+      position: absolute;
+      top: -1;
+
+      padding-top: 40px;
+      padding-left: 150px;
+      padding-right: 60px;
+      box-sizing: border-box;
+
+      h5 {
+        margin-bottom: 10px;
+        font-family: "Gotham", sans-serif;
+      }
+
+      h1 {
+        font-weight: 800 !important;
+        font-family: "Gotham", sans-serif;
+
+        font-size: 54px;
+        word-break: keep-all;
+        letter-spacing: 0.08471rem;
+
+        display: inline-block;
+      }
+    }
+  }
+
+  .service-introduction {
+    width: 100%;
+    margin-top: 7rem;
+
+    p {
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 2;
+      letter-spacing: 0.04235rem;
+      margin-left: 7rem;
+      font-family: "Gotham", sans-serif;
+
+      button {
+        display: block;
+        border: none;
+        font-family: "Gotham", sans-serif;
+        background-color: #ff6b6b;
+        color: white;
+        font-size: 14px;
+        padding: 15px 25px;
+        margin-top: 10px;
+        cursor: pointer;
+        font-weight: normal;
+        transition: all 0.2s ease-in-out;
+        letter-spacing: 0.04235rem;
+
+        &:hover {
+          background-color: #ff2b2b;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .servicesPage {
+    .services-presentation {
+      div {
+        padding-left: 100px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1350px) {
+  .servicesPage {
+    .service-introduction {
+      p {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1400px) {
+  .servicesPage {
+    .services-presentation {
+      div {
+        padding-right: 120px;
+        padding-left: 50px;
+
+        h1 {
+          font-size: 45px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1050px) {
+  .servicesPage {
+    .service-introduction {
+      margin-top: 2rem;
+    }
+    .services-presentation {
+      div {
+        padding-right: 10px;
+        padding-left: 10px;
+        h1 {
+          font-size: 42px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .servicesPage {
+    .service-introduction {
+      p {
+        font-size: 19px;
+
+        button {
+          font-size: 16px;
+          padding: 10px 20px;
+        }
+      }
+    }
+    .services-presentation {
+      width: 100%;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+        z-index: 10;
+      }
+
+      div {
+        background-color: transparent;
+        width: 100%;
+        color: #e1e1e1;
+        padding-right: 200px;
+
+        h1 {
+          font-size: 42px;
+          word-break: keep-all;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .servicesPage {
+    .service-introduction {
+      p {
+        font-size: 14px;
+
+        button {
+          font-size: 13px;
+          padding: 10px 20px;
+        }
+      }
+    }
+  }
+}

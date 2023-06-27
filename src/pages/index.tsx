@@ -14,6 +14,7 @@ const IndexPage: React.FC<PageProps> = () => {
         width: "100%",
       }}
     >
+      {/* <Navbar /> */}
       <InConstruction />
     </main>
   );

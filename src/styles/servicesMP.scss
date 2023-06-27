@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap");
+
+.services-container {
+  padding: 10px 20px;
+
+  margin-top: 15px;
+  margin-bottom: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h4 {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 2.7rem;
+    font-weight: 500;
+    margin-bottom: 1.2em;
+  }
+  .services {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 4rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .services-container {
+    .services {
+      grid-gap: 1.8rem;
+    }
+  }
+}
+
+@media (max-width: 521px) {
+  .services-container {
+    .services {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 3.8rem;
+    }
+  }
+}

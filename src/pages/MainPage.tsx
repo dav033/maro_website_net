@@ -1,60 +1,60 @@
 import React from "react";
 import "../styles/mainPage.scss";
 
-import penIcon from "../assets/icons/edit-interface-symbol-of-pencil-outline-svgrepo-com.svg";
-import happy from "../assets/icons/happy-happy-face-happy-icon-svgrepo-com.svg";
-import mega from "../assets/icons/megaphone-svgrepo-com.svg";
-import tools from "../assets/icons/tools-svgrepo-com.svg";
-
 import Navbar from "../components/Navbar";
+import Services from "../components/MainPage/Services";
+import Footer from "../components/Footer";
+
+const backgroundClasses = ["back1", "back2"];
 
 export default function MainPage() {
+  const [currentBackground, setCurrentBackground] = React.useState(0);
+
+  const [prueba, setPrueba] = React.useState("");
+
+  const divRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    setPrueba("hola");
+
+    setTimeout(() => {
+      setPrueba("");
+    }, 6100);
+    const hacerAlgo = () => {
+      if (divRef.current) {
+        setPrueba("hola");
+        setTimeout(() => {
+          setPrueba("");
+        }, 6100);
+      }
+      setCurrentBackground((prev) => {
+        if (prev === 0) {
+          return 1;
+        } else {
+          return 0;
+        }
+      });
+    };
+
+    const intervalo = setInterval(hacerAlgo, 10000);
+
+    return () => {
+      clearInterval(intervalo);
+    };
+  }, []);
+
   return (
     <>
       <Navbar />
       <div className="mainPage">
-        <div className="imageContent principal">
+        <div
+          ref={divRef}
+          className={`imageContent principal ${backgroundClasses[currentBackground]} ${prueba}`}
+        >
           <h3>Building your dreams, one by one.</h3>
         </div>
 
-        <div className="qualityInformation">
-          <div className="item">
-            <object data={happy} type="image/svg+xml" className="icon" />
-            <h1>Customer Satisfaction</h1>
-            <p>
-              Our priority is ensuring customer satisfaction by delivering
-              exceptional results that meet the highest quality standards.
-            </p>
-          </div>
-          <div className="item">
-            <object data={penIcon} type="image/svg+xml" className="icon" />
-
-            <h1>Tailored Designs</h1>
-            <p>
-              We create custom designs that meet clients' requirements, taking
-              into account functionality, aesthetics, and budget to deliver the
-              ideal solution for each project.
-            </p>
-          </div>
-          <div className="item">
-            <object data={tools} type="image/svg+xml" className="icon" />
-
-            <h1>Expert Craftsmanship</h1>
-            <p>
-              Our craftsmen deliver outstanding results with pride, using the
-              finest materials and precise attention to detail to ensure
-              high-quality finishes.
-            </p>
-          </div>
-          <div className="item">
-            <object data={mega} type="image/svg+xml" className="icon" />
-            <h1>Transparent Communication</h1>
-            <p>
-              Clear communication is essential. We keep clients informed and
-              involved to ensure satisfaction with progress and results.
-            </p>
-          </div>
-        </div>
+        <Services />
 
         <div className="imageContent secondary">
           <div className="floatContainer">
@@ -73,6 +73,8 @@ export default function MainPage() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 }

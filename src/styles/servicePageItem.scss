@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo&display=swap");
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../assets/fonts/Gotham-Medium.woff2") format("woff2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../assets/fonts/Gotham-Black.woff2") format("woff2");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Gotham";
+  src: url("../assets/fonts/Gotham-book.woff2") format("woff2");
+  font-weight: 300;
+}
+
+.servicePageItem.left {
+  flex-direction: row-reverse;
+
+  .imagesContainer {
+    img {
+      float: right;
+    }
+  }
+}
+
+.servicePageItem {
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  padding: 60px 40px;
+  padding-right: 0px;
+  padding-left: 0px;
+  align-items: flex-start;
+
+  .imagesContainer.multiple {
+    margin-bottom: 260px;
+  }
+
+  .imagesContainer {
+    position: relative;
+    padding: 0 !important;
+
+    img {
+      margin: 0;
+    }
+
+    .image1 {
+      position: absolute;
+      left: 27%;
+      width: 540px;
+      height: 302px;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  .body {
+    width: 50%;
+    padding: 0px 100px;
+
+    h1 {
+      font-size: 45px;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      font-family: "Gotham", sans-serif;
+    }
+    p {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 36px;
+      letter-spacing: 0.02rem;
+      margin-bottom: 20px;
+      font-family: "Gotham", sans-serif;
+    }
+
+    button {
+      border: 1.6px solid #80b500;
+      font-size: 16px;
+      background-color: transparent;
+      color: #80b500;
+      padding: 15px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: normal;
+      letter-spacing: 0.05rem;
+      transition: all 0.3s ease-in-out;
+      font-family: "Gotham", sans-serif;
+
+      &:hover {
+        color: #005338;
+        border-color: #005338;
+      }
+    }
+  }
+}
+
+@media (max-width: 1478px) and (min-width: 1080px) {
+  .servicePageItem {
+    .imagesContainer {
+      img {
+        width: 680px;
+        height: 390px;
+      }
+
+      .image1 {
+        left: 23.7%;
+        width: 520px;
+        height: 270px;
+      }
+    }
+
+    .body {
+      width: 50%;
+      padding: 0px 60px;
+      margin-left: 20px;
+    }
+  }
+}
+
+@media (max-width: 1220px) and (min-width: 1080px) {
+  .servicePageItem {
+    .body {
+      padding: 0px 40px;
+    }
+  }
+}
+
+@media (max-width: 1165px) and (min-width: 1080px) {
+  .servicePageItem {
+    .imagesContainer {
+      img {
+        width: 580px;
+        height: 330px;
+      }
+
+      .image1 {
+        left: 17.1%;
+        width: 480px;
+        height: 250px;
+      }
+    }
+
+    .body {
+      padding: 0px 40px;
+
+      h1 {
+        font-size: 40px !important;
+      }
+    }
+  }
+}
+
+@media (max-width: 1080px) {
+  .servicePageItem {
+    flex-direction: column;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    &.left {
+      flex-direction: column;
+    }
+
+    .imagesContainer {
+      margin-bottom: 100px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .body {
+      padding: 0px 20px;
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 905px) {
+  .servicePageItem {
+    width: 100% !important;
+    &.multiple {
+      margin-bottom: 0px;
+    }
+    .body {
+      padding: 0px 20px !important;
+    }
+    .imagesContainer {
+      margin-bottom: 100px !important;
+      width: 100%;
+
+      img {
+        width: 100% !important;
+      }
+
+      .image1 {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .servicePageItem {
+    .body {
+      h1 {
+        font-size: 35px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .servicePageItem {
+    .imagesContainer {
+      margin-bottom: 30px !important;
+    }
+    .body {
+      h1 {
+        font-size: 25px;
+      }
+
+      button {
+        font-size: 14px;
+        padding: 12px 23px;
+      }
+    }
+  }
+}
+
+@media (max-width: 300px) {
+  .servicePageItem {
+    .body {
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import icon from "../assets/images/marosicon1.jpeg";
+import icon from "../assets/images/marosicon1.jpg";
+import icon2 from "../assets/images/marosIcon2.jpg";
 import "../styles/navbar.scss";
 import { Link } from "gatsby";
 import { RiMore2Fill } from "react-icons/ri";
@@ -7,21 +8,21 @@ import { RiMore2Fill } from "react-icons/ri";
 export default function Navbar() {
   const [scroll, setScroll] = useState(false);
   const [mostrarMenu, setMostrarMenu] = useState(false);
-  const menuRef = useRef(null); // Referencia al elemento del menú
+  const menuRef = useRef<HTMLDivElement>(null); // Referencia al elemento del menú
 
   const toggleMenu = () => {
     setMostrarMenu((prevMostrarMenu) => !prevMostrarMenu);
   };
 
   const handleScroll = () => {
-    if (window.scrollY > 80) {
+    if (window.scrollY > 40) {
       setScroll(true);
     } else {
       setScroll(false);
     }
   };
 
-  const handleClickOutsideMenu = (event) => {
+  const handleClickOutsideMenu = (event: Event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
       setMostrarMenu(false);
     }
@@ -29,7 +30,7 @@ export default function Navbar() {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-    document.addEventListener("mousedown", handleClickOutsideMenu); // Cambiado a mousedown para capturar el clic antes de que se active el botón
+    document.addEventListener("mousedown", handleClickOutsideMenu);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -40,12 +41,13 @@ export default function Navbar() {
   return (
     <div className={scroll ? "NavbarContainer scrolled" : "NavbarContainer"}>
       <div className={scroll ? "navbar scrolled" : "navbar"}>
-        <img src={icon} />
+        <img src={icon} className="icon" />
+        <img src={icon2} className="iconScrolled" />
 
         <div className="links">
           <a href="/">Home</a>
           <a href="/">About Us</a>
-          <a href="/">Services</a>
+          <a href="/services">Services</a>
           <a href="/">Contact Us</a>
         </div>
 
@@ -56,6 +58,7 @@ export default function Navbar() {
             <li>
               <Link to="/">Home</Link>
             </li>
+            1
             <li>
               <Link to="/">About Us</Link>
             </li>

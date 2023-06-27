@@ -1,20 +1,21 @@
 .NavbarContainer {
-  height: 120px;
+  height: 90px;
+  transition: height 0.2s ease-in-out;
 }
 
 .navbar {
   width: 100%;
-  height: 120px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: white;
+  background-color: #f1f1f1;
   position: fixed;
-  top: 0;
   width: 100%;
-  background-color: #fff;
   z-index: 9999;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Cambia los valores para ajustar el sombreado */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: height 0.1s ease-in-out, padding 0.1s ease-in-out;
+  padding: 0 2rem;
 
   .menuContainer {
     display: none;
@@ -27,14 +28,15 @@
     }
   }
   img {
-    height: 120px;
-    width: 200px;
+    height: 50px;
+    width: 120px;
+  }
+
+  .iconScrolled {
+    display: none;
   }
 
   .links {
-    padding-right: 2rem;
-    padding-left: 2rem;
-
     a {
       margin-right: 2rem;
       text-decoration: none;
@@ -48,25 +50,59 @@
   }
 }
 
-.scrolled {
-  height: 80px;
+.NavbarContainer.scrolled {
+  height: 60px;
+}
+
+.navbar.scrolled {
+  height: 60px;
+  background-color: #1f1f1f;
+  padding: 0 3rem;
+
+  .links {
+    a {
+      color: white;
+      font-size: 0.9rem;
+    }
+  }
 
   img {
-    height: 80px;
-    width: 130px;
+    height: 40px;
+    width: 65px;
+  }
+
+  .icon {
+    display: none !important;
+  }
+
+  .iconScrolled {
+    display: block;
   }
 }
 
 @media (max-width: 650px) {
   .NavbarContainer {
-    height: 80px;
+    height: 70px;
+    &.scrolled {
+      height: 50px;
+    }
   }
   .navbar {
-    height: 80px !important;
+    height: 70px !important;
+
+    &.scrolled {
+      height: 50px !important;
+      padding: 0 1rem;
+
+      img {
+        height: 45px !important;
+        width: 70px !important;
+      }
+    }
 
     img {
-      height: 80px !important;
-      width: 130px !important;
+      height: 70px !important;
+      width: 140px !important;
     }
 
     .menuContainer {

@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@600&display=swap");
 
+.hola {
+  animation: zoomIn 6s;
+}
 .mainPage {
+  transition: height 2s ease-in-out;
   .imageContent {
     position: relative;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
     width: 100%;
     &::before {
       content: "";
@@ -15,6 +20,7 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.4);
+      z-index: 10;
     }
   }
 
@@ -23,7 +29,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 120px);
+    height: calc(100vh - 90px);
+
+    background-size: 108% 108%;
+    background-position: center;
+    background-repeat: no-repeat;
 
     h3 {
       color: white;
@@ -31,7 +41,7 @@
       z-index: 100;
       font-family: "Hind Siliguri", sans-serif;
       font-size: 3rem;
-      font-weight: 500;
+      font-weight: 100;
 
       span {
         color: #ff6b6b;
@@ -41,6 +51,14 @@
     &::before {
       background-color: rgba(0, 0, 0, 0.4);
     }
+  }
+
+  .imageContent.principal.back1 {
+    background-image: url("../assets/images/sampleimage.jpg");
+  }
+
+  .imageContent.principal.back2 {
+    background-image: url("../assets/images/bath.jpg");
   }
 
   .imageContent.secondary {
@@ -223,7 +241,31 @@
       }
     }
     .imageContent.secondary {
-      height: calc(100vh + 120px);
+      height: calc(100vh + 100px);
     }
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    background-size: 100% 100%;
+  }
+
+  100% {
+    background-size: 108% 108%;
+  }
+}
+
+@keyframes flash {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 1;
+    background-color: white;
+    // background-color: white;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
   }
 }
