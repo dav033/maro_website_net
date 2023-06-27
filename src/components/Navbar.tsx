@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import icon from "../assets/images/marosicon1.jpg";
-import icon2 from "../assets/images/marosIcon2.jpg";
+import icon2 from "../assets/images/marosicon2.jpg";
 import "../styles/navbar.scss";
 import { Link } from "gatsby";
 import { RiMore2Fill } from "react-icons/ri";

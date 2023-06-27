@@ -1,5 +1,5 @@
 
-import paint from "./assets/images/paintreferenceImage.webp";
+import paint from "./assets/images/paintreferenceimage.webp";
 import paintMedium from "./assets/images/paintreferenceimage-medium.webp";
 import lath from "./assets/images/lathreferenceimage.webp";
 import lathMedium from "./assets/images/lathreferenceimage-medium.webp";

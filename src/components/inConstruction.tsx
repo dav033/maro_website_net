@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/inConstruction.scss";
-import image from "../assets/images/inWorking.jpg";
+import image from "../assets/images/inworking.jpg";
 import { BsInstagram } from "react-icons/bs";
 
 export default function InConstruction() {
