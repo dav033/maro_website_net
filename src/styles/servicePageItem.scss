@@ -79,7 +79,7 @@
       font-family: "Gotham", sans-serif;
     }
 
-    button {
+    a {
       border: 1.6px solid #80b500;
       font-size: 16px;
       background-color: transparent;
@@ -92,6 +92,7 @@
       letter-spacing: 0.05rem;
       transition: all 0.3s ease-in-out;
       font-family: "Gotham", sans-serif;
+      text-decoration: none;
 
       &:hover {
         color: #005338;
@@ -230,7 +231,7 @@
         font-size: 25px;
       }
 
-      button {
+      a {
         font-size: 14px;
         padding: 12px 23px;
       }

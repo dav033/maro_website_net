@@ -26,12 +26,11 @@ export default function Services() {
     }
   };
 
-  const prueba = React.useCallback(() => {
+  const initialize = React.useCallback(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const option = urlParams.get("option");
 
     if (option) {
-      console.log(option);
       setTargetSection(option);
     }
   }, []);
@@ -39,7 +38,7 @@ export default function Services() {
   React.useEffect(() => {
     window.addEventListener("scroll", handleScroll);
 
-    prueba();
+    initialize();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -74,9 +73,7 @@ export default function Services() {
 
         <ServicePageItem
           title="Painting"
-          images={[
-            { default: images.paint, medium: images.paintMedium.def },
-          ]}
+          images={[{ default: images.paint, medium: images.paintMedium.def }]}
           idSection="painting"
         >
           Enhance the beauty and ambiance of your spaces with our expert
@@ -147,9 +144,7 @@ export default function Services() {
 
         <ServicePageItem
           title="Room Aditions"
-          images={[
-            { default: images.room, medium: images.roomMedium },
-          ]}
+          images={[{ default: images.room, medium: images.roomMedium }]}
           idSection="roomadditions"
         >
           If you require additional space in your home or office, our room

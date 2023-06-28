@@ -45,10 +45,10 @@ export default function Navbar() {
         <img src={icon2} className="iconScrolled" />
 
         <div className="links">
-          <a href="/">Home</a>
-          <a href="/">About Us</a>
-          <a href="/services">Services</a>
-          <a href="/">Contact Us</a>
+          <Link to="/MainPage">Home</Link>
+          <Link to="/">About Us</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/contact-us">Contact Us</Link>
         </div>
 
         <div className="menuContainer">
@@ -59,7 +59,7 @@ export default function Navbar() {
               <Link to="/">Home</Link>
             </li>
             1
-            <li>
+            <li>to
               <Link to="/">About Us</Link>
             </li>
             <li>

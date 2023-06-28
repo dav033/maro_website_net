@@ -1,7 +1,6 @@
 .contact-us {
   width: 100%;
-  //   background-color: red;
-  height: 100%;
+  height: calc(100% - 90px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,6 +77,8 @@
 
         textarea {
           height: 150px;
+          resize: none;
+          max-width: 100%;
         }
       }
 
@@ -100,6 +101,86 @@
           span {
             font-size: 18px;
             font-weight: 100;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .contact-us {
+    .container {
+      width: 90%;
+
+      .body {
+        padding: 0;
+        form {
+          width: 50%;
+        }
+
+        .information {
+          width: 50%;
+          padding-right: 5px;
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .contact-us {
+    height: auto;
+    padding: 20px;
+    .container {
+      .body {
+        flex-direction: column-reverse;
+        align-items: center;
+
+        form {
+          width: 100%;
+        }
+
+        .information {
+          width: 100%;
+          padding: 0;
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .contact-us {
+    padding: 10px;
+    .container {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .contact-us {
+    .container {
+      .body {
+        form {
+          width: 100%;
+        }
+
+        .information {
+          width: 100%;
+          padding: 0;
+          padding-top: 20px;
+          div {
+            span {
+              font-size: 16px;
+              word-break: break-all;
+            }
+            .icon {
+              margin-right: 10px;
+            }
           }
         }
       }

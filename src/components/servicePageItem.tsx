@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import "../styles/servicePageItem.scss";
 import throttle from "lodash/throttle";
+import { Link } from "gatsby";
 
 interface Images {
   default: string;
@@ -109,7 +110,7 @@ function ServicePageItem(props: Props) {
         <h1>{title}</h1>
         <p>{children}</p>
 
-        <button>Order Now</button>
+        <Link to={`/contact-us/?service=${idSection}`}>Order Now</Link>
       </div>
     </div>
   );

@@ -1,78 +1,151 @@
-import "../styles/contact-us.scss";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { BsTelephoneFill } from "react-icons/bs";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import axios from "axios";
+import "../styles/contact-us.scss";
+import Alert from "../components/Alert";
 
 export default function ContactUs() {
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [service, setService] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+  const [showAlert, setShowAlert] = useState<boolean>(false);
+  const [alertType, setAlertType] = useState<string>("");
+  const [alertMessage, setAlertMessage] = useState<string>("");
+
+  const initialize = React.useCallback(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const option = urlParams.get("service");
+    switch (option) {
+      case "painting":
+        setService("Painting");
+        break;
+      case "lathplastering":
+        setService("Lath & Plastering");
+        break;
+      case "waterproofing":
+        setService("Waterproofing");
+        break;
+      case "newconstruction":
+        setService("New Construction");
+        break;
+      case "roomadditions":
+        setService("Room Additions");
+        break;
+      case "kitchenbathroom":
+        setService("Kitchen & Bathroom");
+        break;
+    }
+  }, []);
+
+  useEffect(() => {
+    initialize();
+  }, []);
+
+  const handleAlert = () => {
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 3000);
+  };
+
   function enviarCorreo(e: any) {
     e.preventDefault();
+
+    if (name === "") {
+      setAlertMessage("Name is required");
+      setAlertType("warning");
+      handleAlert();
+      return;
+    } else if (email === "") {
+      setAlertMessage("Email is required");
+      setAlertType("warning");
+      handleAlert();
+      return;
+    } else if (message === "") {
+      setAlertMessage("Message is required");
+      setAlertType("warning");
+      handleAlert();
+      return;
+    }
+
     const data = {
-      personalizations: [
-        {
-          to: [{ email: "david.theran03@gmail.com" }], // Reemplaza con tu dirección de correo electrónico
-          subject: "Mensaje de contacto",
-        },
-      ],
-      from: { email: "david.theran032@gmail.com" },
-      content: [
-        {
-          type: "text/plain",
-          value: `Nombre: david\n\nMensaje: theran`,
-        },
-      ],
+      description: message,
+      email: email,
+      name: name,
+      service: service,
     };
 
-    // Convertir los datos a formato JSON
-    const jsonData = JSON.stringify(data);
-
-    // Crear una instancia del objeto XMLHttpRequest
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "https://api.sendgrid.com/v3/mail/send");
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.setRequestHeader("Authorization", "Bearer wAy4XZT53M7nz8Na"); // Reemplaza con tu propia clave de API de SendGrid
-
-    xhr.addEventListener("load", function () {
-      if (xhr.status >= 200 && xhr.status < 400) {
-        console.log("Correo electrónico enviado correctamente");
-      } else {
-        console.error("Error al enviar el correo electrónico");
-      }
-    });
-
-    xhr.send(jsonData);
+    axios
+      .post("http://localhost:3000/contact-us", { data })
+      .then((res) => {
+        console.log(res);
+        setAlertMessage("Email sent successfully");
+        setAlertType("success");
+        handleAlert();
+      })
+      .catch((err) => {
+        console.log(err);
+        setAlertMessage("Error sending email");
+        setAlertType("error");
+        handleAlert();
+      });
   }
 
   return (
     <>
       <Navbar />
       <div className="contact-us">
+        <Alert type={alertType} show={showAlert}>
+          {alertMessage}
+        </Alert>
         <div className="container">
           <h1>Contact Us</h1>
           <div className="body">
             <form onSubmit={enviarCorreo}>
-              <input type="text" placeholder="Name" />
-              <input type="mail" placeholder="Email" />
-              <input type="text" placeholder="Service" />
-              <textarea placeholder="Message" />
+              <input
+                type="text"
+                placeholder="Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <input
+                type="text"
+                placeholder="Service"
+                value={service}
+                onChange={(e) => setService(e.target.value)}
+              />
+              <textarea
+                placeholder="Message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
               <button>Send</button>
             </form>
 
             <div className="information">
               <div>
-                <FaMapMarkerAlt className="icon" /> <span>City, State</span>
+                <FaMapMarkerAlt className="icon" /> <span>Miami, Florida</span>
               </div>
 
               <div>
                 <BsTelephoneFill className="icon" />
-                <span>(212) 555-2368</span>
+                <span>(786) 707-0815</span>
               </div>
 
               <div>
                 <IoMdMail className="icon" />
-                <span>david.theran03@gmail.com</span>
+                <span>info@marosconstruction.com</span>
               </div>
             </div>
           </div>
