@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState, useCallback } from "react";
 import "../styles/servicePageItem.scss";
 import throttle from "lodash/throttle";
+
 import { Link } from "gatsby";
 
 interface Images {
@@ -95,7 +96,7 @@ function ServicePageItem(props: Props) {
       >
         {images.map((image, index) => (
           <picture key={index}>
-            <source media="(max-width: 100px)" srcSet={image.medium} />
+            <source media="(max-width: 1080px)" srcSet={image.medium} />
             <img
               src={image.default}
               alt={title}
