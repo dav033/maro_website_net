@@ -7,9 +7,6 @@
   transition: height 2s ease-in-out;
   .imageContent {
     position: relative;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 
     width: 100%;
     &::before {
@@ -183,6 +180,7 @@
 @media (max-width: 750px) {
   .mainPage {
     .imageContent.principal {
+      background-size: cover !important;
       h3 {
         font-size: 2.5rem;
         text-align: center;
