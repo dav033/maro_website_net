@@ -6,9 +6,9 @@ import Services from "../components/MainPage/Services";
 import Footer from "../components/Footer";
 import Layout from "../components/layout";
 import ExampleVideo from "../components/MainPage/ExampleVideo";
-import reel1 from "../assets/videos/reel1.mp4";
-import reel2 from "../assets/videos/reel2.mp4";
-import reel3 from "../assets/videos/reel3.mp4";
+import reel1 from "../assets/videos/reel1.webm";
+import reel2 from "../assets/videos/reel2.webm";
+import reel3 from "../assets/videos/reel3.webm";
 const backgroundClasses = ["back1", "back2"];
 
 export default function MainPage() {
