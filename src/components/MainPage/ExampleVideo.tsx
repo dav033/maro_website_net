@@ -3,7 +3,7 @@ import "../../styles/exampleVideo.scss";
 
 export default function ExampleVideo(props: any) {
   return (
-    <video autoPlay muted loop className="video">
+    <video autoPlay muted loop  controls className="video">
       <source src={props.src} type="video/mp4"></source>
     </video>
   );
