@@ -4,7 +4,11 @@ import "../styles/mainPage.scss";
 import Navbar from "../components/Navbar";
 import Services from "../components/MainPage/Services";
 import Footer from "../components/Footer";
-
+import Layout from "../components/layout";
+import ExampleVideo from "../components/MainPage/ExampleVideo";
+import reel1 from "../assets/videos/reel1.mp4";
+import reel2 from "../assets/videos/reel2.mp4";
+import reel3 from "../assets/videos/reel3.mp4";
 const backgroundClasses = ["back1", "back2"];
 
 export default function MainPage() {
@@ -44,8 +48,7 @@ export default function MainPage() {
   }, []);
 
   return (
-    <>
-      <Navbar />
+    <Layout>
       <div className="mainPage">
         <div
           ref={divRef}
@@ -55,6 +58,12 @@ export default function MainPage() {
         </div>
 
         <Services />
+
+        <div className="videos">
+          <ExampleVideo src={reel1} />
+          <ExampleVideo src={reel2} />
+          <ExampleVideo src={reel3} />
+        </div>
 
         <div className="imageContent secondary">
           <div className="floatContainer">
@@ -73,8 +82,6 @@ export default function MainPage() {
           </div>
         </div>
       </div>
-
-      <Footer />
-    </>
+    </Layout>
   );
 }

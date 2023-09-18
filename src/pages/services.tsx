@@ -3,6 +3,7 @@ import "../styles/services.scss";
 import Navbar from "../components/Navbar";
 import images from "../images";
 import ServicePageItem from "../components/servicePageItem";
+import Layout from "../components/layout";
 
 export default function Services() {
   const [scroll, setScroll] = React.useState(false);
@@ -52,8 +53,7 @@ export default function Services() {
   }, [targetSection]);
 
   return (
-    <>
-      <Navbar />
+    <Layout>
       <div className="servicesPage">
         <div className="services-presentation">
           <div style={scroll ? { zIndex: 0 } : { zIndex: 1000000 }}>
@@ -176,6 +176,6 @@ export default function Services() {
         </ServicePageItem>
       </div>
       ;
-    </>
+    </Layout>
   );
 }

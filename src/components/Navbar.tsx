@@ -8,7 +8,7 @@ import { RiMore2Fill } from "react-icons/ri";
 export default function Navbar() {
   const [scroll, setScroll] = useState(false);
   const [mostrarMenu, setMostrarMenu] = useState(false);
-  const menuRef = useRef<HTMLDivElement>(null); // Referencia al elemento del menú
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const toggleMenu = () => {
     setMostrarMenu((prevMostrarMenu) => !prevMostrarMenu);
@@ -41,14 +41,21 @@ export default function Navbar() {
   return (
     <div className={scroll ? "NavbarContainer scrolled" : "NavbarContainer"}>
       <div className={scroll ? "navbar scrolled" : "navbar"}>
-        <img src={icon} className="icon" />
-        <img src={icon2} className="iconScrolled" />
+        <Link to="/MainPage">
+          <img src={icon} className="icon" />
+          <img src={icon2} className="iconScrolled" />
+        </Link>
 
         <div className="links">
           <Link to="/MainPage">Home</Link>
-          <Link to="/">About Us</Link>
+          <Link to="/about-us">About Us</Link>
           <Link to="/services">Services</Link>
-          <Link to="/contact-us">Contact Us</Link>
+          <Link
+            to="/contact-us"
+            className={scroll ? "consultation scrolled" : "consultation"}
+          >
+            Free Consultation
+          </Link>
         </div>
 
         <div className="menuContainer">
@@ -56,17 +63,16 @@ export default function Navbar() {
 
           <ul ref={menuRef} className={mostrarMenu ? "menu show" : "menu"}>
             <li>
-              <Link to="/">Home</Link>
-            </li>
-            1
-            <li>to
-              <Link to="/">About Us</Link>
+              <Link to="/MainPage">Home</Link>
             </li>
             <li>
-              <Link to="/">Services</Link>
+              <Link to="/about-us">About Us</Link>
             </li>
             <li>
-              <Link to="/">Contact Us</Link>
+              <Link to="/services">Services</Link>
+            </li>
+            <li>
+              <Link to="/contact-us">Contact Us</Link>
             </li>
           </ul>
         </div>

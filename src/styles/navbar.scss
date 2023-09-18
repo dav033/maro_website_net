@@ -1,6 +1,8 @@
 .NavbarContainer {
   height: 90px;
   transition: height 0.2s ease-in-out;
+  z-index: 99999;
+  position: relative;
 }
 
 .navbar {
@@ -12,7 +14,7 @@
   background-color: #f1f1f1;
   position: fixed;
   width: 100%;
-  z-index: 9999;
+  z-index: 999999;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   transition: height 0.1s ease-in-out, padding 0.1s ease-in-out;
   padding: 0 2rem;
@@ -45,6 +47,27 @@
 
       &:hover {
         color: #ff6b6b;
+      }
+    }
+
+    .consultation {
+      background-color: #a31e36;
+      color: white;
+      font-weight: 600;
+      padding: 14px 16px 12px;
+      font-size: 14px;
+      text-transform: uppercase;
+      border-radius: 25px;
+      transition: all 0.2 ease-in-out;
+
+      &:hover {
+        background-color: #810017;
+        color: white;
+      }
+
+      &.scrolled {
+        padding: 12px 14px 10px;
+        font-size: 12px;
       }
     }
   }
@@ -80,7 +103,16 @@
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 750px) {
+  .navbar {
+    .links {
+      .consultation {
+        margin-right: 0;
+      }
+    }
+  }
+}
+@media (max-width: 680px) {
   .NavbarContainer {
     height: 70px;
     &.scrolled {
@@ -131,6 +163,11 @@
       .menu.show li {
         width: 100%;
         padding: 0;
+
+        &:hover {
+          background-color: #cccccc;
+          transition: 0.2 ease-in-out all;
+        }
 
         a {
           color: black;

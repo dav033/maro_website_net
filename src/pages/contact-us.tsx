@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import axios from "axios";
 import "../styles/contact-us.scss";
 import Alert from "../components/Alert";
+import Layout from "../components/layout";
 
 export default function ContactUs() {
   const [name, setName] = useState<string>("");
@@ -97,8 +98,7 @@ export default function ContactUs() {
   }
 
   return (
-    <>
-      <Navbar />
+    <Layout>
       <div className="contact-us">
         <Alert type={alertType} show={showAlert}>
           {alertMessage}
@@ -152,7 +152,6 @@ export default function ContactUs() {
         </div>
       </div>
 
-      <Footer />
-    </>
+    </Layout>
   );
 }
