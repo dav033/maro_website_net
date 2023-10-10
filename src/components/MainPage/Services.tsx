@@ -1,12 +1,6 @@
 import React from "react";
 import "../../styles/servicesMP.scss";
 import ServiceItem from "./ServiceItem";
-import { TbTrowel } from "react-icons/tb";
-import { AiFillFormatPainter } from "react-icons/ai";
-import { RiPaintBrushLine } from "react-icons/ri";
-import { BsHouseAdd } from "react-icons/bs";
-import { LuBedDouble } from "react-icons/lu";
-import { VscTools } from "react-icons/vsc";
 
 import buildingIcon from "../../assets/icons/building.svg";
 import paintIcon from "../../assets/icons/paint.svg";

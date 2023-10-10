@@ -1,9 +1,7 @@
 import React from "react";
 import "../styles/mainPage.scss";
 
-import Navbar from "../components/Navbar";
 import Services from "../components/MainPage/Services";
-import Footer from "../components/Footer";
 import Layout from "../components/layout";
 import ExampleVideo from "../components/MainPage/ExampleVideo";
 import reel1 from "../assets/videos/reel1.webm";

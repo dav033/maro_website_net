@@ -6,7 +6,6 @@ import ServicePageItem from "../components/servicePageItem";
 import Layout from "../components/layout";
 
 export default function Services() {
-  const [scroll, setScroll] = React.useState(false);
   const [targetSection, setTargetSection] = React.useState<string | null>(null);
 
   function scrollToSection(sectionId: string) {
@@ -19,14 +18,6 @@ export default function Services() {
     }
   }
 
-  const handleScroll = () => {
-    if (window.scrollY > 1) {
-      setScroll(true);
-    } else {
-      setScroll(false);
-    }
-  };
-
   const initialize = React.useCallback(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const option = urlParams.get("option");
@@ -37,13 +28,7 @@ export default function Services() {
   }, []);
 
   React.useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-
     initialize();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
   }, []);
 
   React.useEffect(() => {
@@ -56,10 +41,16 @@ export default function Services() {
     <Layout>
       <div className="servicesPage">
         <div className="services-presentation">
-          <div style={scroll ? { zIndex: 0 } : { zIndex: 1000000 }}>
+          <div>
             <h5>Services</h5>
 
             <h1>SHAPE YOUR VISION</h1>
+          </div>
+
+          <div>
+            <ul>
+              <li></li>
+            </ul>
           </div>
         </div>
 

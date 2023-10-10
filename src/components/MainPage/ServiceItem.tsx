@@ -1,4 +1,5 @@
 import "../../styles/serviceItem.scss";
+import { FiArrowRight } from "react-icons/fi";
 
 interface ServiceItemProps {
   name: string;
@@ -17,7 +18,16 @@ export default function ServiceItem(props: ServiceItemProps) {
         <object data={icon} type="image/svg+xml" className="icon" />
       </div>
 
-      <a href={`/services?option=${link}`}>{name}</a>
+      <span>{name}</span>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia quas
+        corporis eligendi reiciendis illo obcaecati architecto voluptate.
+      </p>
+
+      <a href={`/services?option=${link}`}>
+        Learn More <FiArrowRight />
+      </a>
     </div>
   );
 }
