@@ -46,12 +46,6 @@ export default function Services() {
 
             <h1>SHAPE YOUR VISION</h1>
           </div>
-
-          <div>
-            <ul>
-              <li></li>
-            </ul>
-          </div>
         </div>
 
         <div className="service-introduction">
