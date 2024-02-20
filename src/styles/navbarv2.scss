@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "Monument";
+  src: url("../assets/fonts/gotham-medium.woff2");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "maison";
+  src: url("../assets/fonts/MaisonNeueExtended-Demi.otf");
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Squada+One&display=swap");
+.navbar-v2 {
+  // background-color: #f1f1f1;
+  background-color: transparent;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  z-index: 100000;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+  color: white;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 40px;
+
+  &.services {
+    a {
+      color: #001632;
+    }
+
+    .logo {
+      color: #001632;
+      border: 0.1px solid #001632;
+    }
+
+    &::before {
+      background-color: transparent;
+    }
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: -100%; /* Inicialmente, ubicado arriba de la barra de navegación */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #001632; /* Color de fondo con opacidad */
+    transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out; /* Transición de posición y opacidad */
+    z-index: -1; /* Detrás de la barra de navegación */
+    opacity: 0;
+  }
+
+  &:hover::before {
+    top: 0; /* Mueve el pseudo-elemento hacia abajo al hacer hover */
+    opacity: 1;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+    font-family: "maison";
+    font-size: 18px;
+    margin-right: 40px;
+    letter-spacing: normal;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    svg {
+      margin-left: 2px;
+    }
+  }
+
+  &.down {
+    transform: translateY(-100%);
+  }
+
+  &.up {
+    transform: translateY(0);
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 100;
+    font-size: 36px;
+    cursor: pointer;
+    user-select: none;
+    margin-right: 50px;
+    font-family: "Squada One", sans-serif;
+    border: 0.1px solid white;
+    padding: 10px 20px;
+    height: 70px;
+  }
+
+  .menuContainer {
+    position: absolute;
+    margin-left: 15px;
+    width: 65px;
+    top: 50%;
+    transform: translate(0%, -50%);
+    user-select: none;
+
+    div {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      span {
+        padding: 0;
+        line-height: 0;
+      }
+    }
+  }
+}

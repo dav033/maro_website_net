@@ -21,13 +21,13 @@ export default function MainPage() {
 
     setTimeout(() => {
       setPrueba("");
-    }, 6100);
+    }, 2000);
     const hacerAlgo = () => {
       if (divRef.current) {
         setPrueba("hola");
         setTimeout(() => {
           setPrueba("");
-        }, 6100);
+        }, 2000);
       }
       setCurrentBackground((prev) => {
         if (prev === 0) {

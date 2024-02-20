@@ -8,13 +8,13 @@ export default function Footer() {
     <footer>
       <div className="footer">
         <div className="row">
-          <Link
-            to="https://www.instagram.com/maros_construction/"
+          <a
+            href="https://www.instagram.com/maros_construction/"
             className="icon"
             target="_blank"
           >
             <BsInstagram />
-          </Link>
+          </a>
         </div>
 
         <div className="row">

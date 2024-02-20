@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/services.scss";
-import Navbar from "../components/Navbar";
 import images from "../images";
 import ServicePageItem from "../components/servicePageItem";
 import Layout from "../components/layout";
@@ -40,12 +39,17 @@ export default function Services() {
   return (
     <Layout>
       <div className="servicesPage">
+        <div className="titleContainer">
+          <h3>Services</h3>
+          <h1>Shape Your Vision</h1>
+        </div>
+
         <div className="services-presentation">
-          <div>
+          {/* <div>
             <h5>Services</h5>
 
             <h1>SHAPE YOUR VISION</h1>
-          </div>
+          </div> */}
         </div>
 
         <div className="service-introduction">
@@ -57,8 +61,8 @@ export default function Services() {
         </div>
 
         <ServicePageItem
-          title="Painting"
-          images={[{ default: images.paint, medium: images.paintMedium.def }]}
+          title="Concrete Repair"
+          images={[{ default: images.lath, medium: images.lath }]}
           idSection="painting"
         >
           Enhance the beauty and ambiance of your spaces with our expert
@@ -68,8 +72,8 @@ export default function Services() {
           understand their preferences and deliver personalized results
         </ServicePageItem>
 
-        <ServicePageItem
-          title="Lath & Plastering"
+        {/* <ServicePageItem
+          title="DriveWays"
           images={[
             { default: images.lath, medium: images.lathMedium },
             {
@@ -88,11 +92,11 @@ export default function Services() {
         </ServicePageItem>
 
         <ServicePageItem
-          title="Waterproofing"
+          title="Sidewalks"
           images={[
             {
-              default: images.waterproofing,
-              medium: images.waterproofingMedium,
+              default: images.plastering,
+              medium: images.plastering,
             },
           ]}
           idSection="waterproofing"
@@ -105,7 +109,7 @@ export default function Services() {
         </ServicePageItem>
 
         <ServicePageItem
-          title="New Construction"
+          title="Decks"
           images={[
             {
               default: images.House,
@@ -125,40 +129,7 @@ export default function Services() {
           process. From concept and design to construction and finishing
           touches, we strive to exceed your expectations and deliver a space
           that perfectly aligns with your vision
-        </ServicePageItem>
-
-        <ServicePageItem
-          title="Room Aditions"
-          images={[{ default: images.room, medium: images.roomMedium }]}
-          idSection="roomadditions"
-        >
-          If you require additional space in your home or office, our room
-          addition services are the perfect solution. Our team of architects,
-          engineers, and construction experts will seamlessly integrate new
-          rooms into your existing structure, considering aesthetics,
-          functionality, and structural integrity. We ensure that the new space
-          blends harmoniously with the rest of your property.
-        </ServicePageItem>
-
-        <ServicePageItem
-          title="Kitchen & Bathroom Renovations"
-          images={[
-            { default: images.bath, medium: images.bathMedium },
-            {
-              default: images.kitchen,
-              medium: images.kitchenMedium,
-            },
-          ]}
-          idSection="kitchenbathroom"
-          leftOrientation
-        >
-          Revitalize the heart of your home or give your bathroom a stunning
-          makeover with our kitchen and bathroom renovation services. We work
-          closely with you to understand your design preferences, functionality
-          requirements, and budget constraints. Our skilled craftsmen will
-          transform your space, delivering a beautiful, functional, and
-          personalized result.
-        </ServicePageItem>
+        </ServicePageItem> */}
       </div>
       ;
     </Layout>

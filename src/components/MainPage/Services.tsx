@@ -16,31 +16,25 @@ export default function Services() {
 
       <div className="services">
         <ServiceItem
-          name="Lath & Plastering "
+          name="Concrete Repair"
           icon={trowelIcon}
           link="lathplastering"
         />
-        <ServiceItem name="Painting" icon={paintIcon} link="painting" />
+        {/* <ServiceItem
+          name="Driveways and Sidewalks"
+          icon={paintIcon}
+          link="painting"
+        />
         <ServiceItem
           name="Waterproofing"
           icon={waterIcon}
           link="waterproofing"
         />
         <ServiceItem
-          name="New Construction"
+          name="Remodeling"
           icon={buildingIcon}
           link="newconstruction"
-        />
-        <ServiceItem
-          name="Room Additions"
-          icon={housePlusIcon}
-          link="roomadditions"
-        />
-        <ServiceItem
-          name="Kitchen & Bathroom"
-          icon={kitchenIcon}
-          link="kitchenbathroom"
-        />
+        /> */}
       </div>
     </div>
   );
